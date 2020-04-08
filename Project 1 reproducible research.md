@@ -63,8 +63,8 @@ Now, let's calculate the mean and median values for the total number of steps ta
 mea<- mean(total)
 med<- median(total)
 ```
-Mean is `r mea`  
-Median is `r med` 
+Mean is `r toString(mea)`  
+Median is `r toString(med)` 
 
 #What is the average daily activity pattern?
 

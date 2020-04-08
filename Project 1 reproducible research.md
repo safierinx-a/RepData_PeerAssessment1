@@ -55,7 +55,7 @@ total <- tapply(data[is.na(data$steps)==FALSE,]$steps, data[is.na(data$steps)==F
 hist(total)
 ```
 
-![plot of chunk unnamed-chunk-14](figures/hist1.png)
+![](/figures/hist1.png)
 
 Now, let's calculate the mean and median values for the total number of steps taken per day.
 
@@ -81,7 +81,7 @@ t <- data.frame("Interval" = sort(unique(data$interval)),
 plot(t$Interval, t$Mean, 'l', xlab = "Interval", ylab = "Mean Steps")
 ```
 
-![plot of chunk unnamed-chunk-16](images/ts.png)
+![](/images/ts.png)
 
 To find the interval with the maximum mean number of steps, we order them into place.
 
@@ -129,7 +129,7 @@ total <- tapply(data.i$steps, data.i$date, FUN = sum)
 hist(total)
 ```
 
-![plot of chunk unnamed-chunk-20](images/hist2.png)
+![](/images/hist2.png)
 
 ```r
 mea<- mean(total)
@@ -176,7 +176,7 @@ plot(unique(data.i[levels(data.i$wDay) == c('weekend'),]$interval)
      'l', xlab = 'Interval', ylab = 'Mean Number of Steps', main = "")
 ```
 
-![plot of chunk unnamed-chunk-21](images/final.png)
+![](/images/final.png)
 
 
 

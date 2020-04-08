@@ -134,7 +134,16 @@ hist(total)
 ```r
 mea<- mean(total)
 med<- median(total)
+print(mea)
 ```
+
+[1] 10766.19
+
+```r
+print(med)
+```
+
+[1] 10766.19
 New mean is `mea`  
 New median is `med`
 
@@ -174,3 +183,4 @@ plot(unique(data.i[levels(data.i$wDay) == c('weekend'),]$interval)
 
 
 Now let's knit the Markdown document into an HTML document.
+

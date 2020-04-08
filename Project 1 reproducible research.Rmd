@@ -119,6 +119,8 @@ total <- tapply(data.i$steps, data.i$date, FUN = sum)
 hist(total)
 mea<- mean(total)
 med<- median(total)
+print(mea)
+print(med)
 ```
 New mean is `mea`  
 New median is `med`
@@ -156,3 +158,6 @@ plot(unique(data.i[levels(data.i$wDay) == c('weekend'),]$interval)
 
 
 Now let's knit the Markdown document into an HTML document.
+```{r}
+knitr::knit("Project 1 reproducible research.Rmd")
+```

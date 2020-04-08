@@ -55,16 +55,24 @@ total <- tapply(data[is.na(data$steps)==FALSE,]$steps, data[is.na(data$steps)==F
 hist(total)
 ```
 
-![](/images/hist1.png)
+![plot of chunk unnamed-chunk-22](/figuresunnamed-chunk-22-1.png)
 
 Now, let's calculate the mean and median values for the total number of steps taken per day.
 
 ```r
 mea<- mean(total)
 med<- median(total)
+print(paste("Mean is", as.character(mea), sep = ":"))
 ```
-Mean is `r toString(mea)`  
-Median is `r toString(med)` 
+
+[1] "Mean is:10766.1886792453"
+
+```r
+print(paste("Median is", as.character(med), sep = ":"))
+```
+
+[1] "Median is:10765"
+` 
 
 #What is the average daily activity pattern?
 
@@ -81,7 +89,7 @@ t <- data.frame("Interval" = sort(unique(data$interval)),
 plot(t$Interval, t$Mean, 'l', xlab = "Interval", ylab = "Mean Steps")
 ```
 
-![](/images/ts.png)
+![plot of chunk unnamed-chunk-24](/figuresunnamed-chunk-24-1.png)
 
 To find the interval with the maximum mean number of steps, we order them into place.
 
@@ -129,7 +137,7 @@ total <- tapply(data.i$steps, data.i$date, FUN = sum)
 hist(total)
 ```
 
-![](/images/hist2.png)
+![plot of chunk unnamed-chunk-28](/figuresunnamed-chunk-28-1.png)
 
 ```r
 mea<- mean(total)
@@ -167,7 +175,12 @@ plot(unique(data.i[levels(data.i$wDay) == c('weekday'),]$interval)
      'l', xlab = '', ylab = '', main = "Weekday(Top) and Weekend(Bottom) Mean Steps Per Interval", axes = FALSE)
 Axis(side=1, labels=FALSE)
 Axis(side=2, labels=TRUE)
-par(fig=c(0,1,0,0.66), new=TRUE)
+```
+
+![plot of chunk unnamed-chunk-29](/figuresunnamed-chunk-29-1.png)
+
+```r
+par(fig=c(0,1,0,0.66))
 
 plot(unique(data.i[levels(data.i$wDay) == c('weekend'),]$interval)
 , tapply(data.i[levels(data.i$wDay) == c('weekend'),]$steps,
@@ -176,8 +189,7 @@ plot(unique(data.i[levels(data.i$wDay) == c('weekend'),]$interval)
      'l', xlab = 'Interval', ylab = 'Mean Number of Steps', main = "")
 ```
 
-![](/images/final.png)
-
+![plot of chunk unnamed-chunk-29](/figuresunnamed-chunk-29-2.png)
 
 
 

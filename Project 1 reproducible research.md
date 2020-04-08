@@ -55,7 +55,7 @@ total <- tapply(data[is.na(data$steps)==FALSE,]$steps, data[is.na(data$steps)==F
 hist(total)
 ```
 
-![](/figures/hist1.png)
+![](/images/hist1.png)
 
 Now, let's calculate the mean and median values for the total number of steps taken per day.
 
